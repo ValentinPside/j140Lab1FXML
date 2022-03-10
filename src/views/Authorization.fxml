@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane id="GridPane" prefHeight="150.0" prefWidth="250.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AuthorizationController">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="Authorization" fx:id="labl1" />
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Name" fx:id="labl2" />
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Last name" fx:id="labl3" />
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Age" fx:id="labl4" />
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="field1" />  
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="field2" />  
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="field3" />  
+    <Button GridPane.rowIndex="4" GridPane.columnIndex="1" text="Users List" onAction="#openUserList" fx:id="but1" />
+    <Button GridPane.rowIndex="4" GridPane.columnIndex="2" text="Sign in" onAction="#signIn" fx:id="but2" />
+</GridPane>
