@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="BorderPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NoteController">
+    <bottom>
+        <FlowPane hgap="20.0">
+            <Button text="Save" onAction="#save" fx:id="button1" />
+            <Button text="Clear" onAction="#clear" fx:id="button2" />
+            <Button text="Open File" onAction="#openFile" fx:id="button3" />
+        </FlowPane>
+    </bottom>
+    <center>
+        <TextArea text="center" fx:id="text" />
+    </center>
+</BorderPane>
