@@ -12,11 +12,11 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author user
+ * @author Valentin
  */
-public class Note extends Stage{
-    public Note() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/views/Note.fxml"));
+public class NewUser extends Stage{
+    public NewUser() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/views/NewUser.fxml"));
         Scene scene = new Scene(root);
         setScene(scene);
         show();

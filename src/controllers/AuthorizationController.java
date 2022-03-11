@@ -9,6 +9,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import resurces.User;
+import resurces.UserController;
+import resurces.UserException;
 import stages.Table;
 import stages.Note;
 
@@ -19,6 +23,12 @@ import stages.Note;
  */
 public class AuthorizationController implements Initializable {
 
+    
+    @FXML
+    TextField field1;
+    TextField field2;
+    TextField field3;
+
     @FXML
     private void openUserList(ActionEvent event) throws Exception {
         new Table();
@@ -26,7 +36,17 @@ public class AuthorizationController implements Initializable {
     
     @FXML
     private void signIn(ActionEvent event) throws Exception {
-        new Note();
+        String name = field1.getText();
+            String lastName = field2.getText();
+            Integer age = Integer.parseInt(field3.getText().replaceAll("[^\\d]", ""));
+            try {
+                if(UserController.checkData(name, lastName, age)){
+                    User user = new User(name, lastName, age);
+                    new Note();
+                }
+            } catch (UserException ex) {
+                System.out.println(ex.getMessage());
+            }
     }
     
     @Override

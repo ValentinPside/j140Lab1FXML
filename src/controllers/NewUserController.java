@@ -9,22 +9,32 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import stages.NewUser;
+import javafx.scene.control.TextField;
+import resurces.DBServer;
 
 /**
  * FXML Controller class
  *
- * @author user
+ * @author Valentin
  */
-public class TableController implements Initializable {
+public class NewUserController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    TextField field1;
+    TextField field2;
+    TextField field3;
     
     @FXML
     private void addUser(ActionEvent event) throws Exception {
-        new NewUser();
+        String name = field1.getText();
+           String lastName = field2.getText();
+           Integer age = Integer.parseInt(field3.getText().replaceAll("[^\\d]", ""));
+            try {
+                DBServer db = new DBServer();
+                db.addNewUser(name, lastName, age);
+            } catch (Exception ex) {
+                ex.getMessage();
+            }
     }
     
     @Override
